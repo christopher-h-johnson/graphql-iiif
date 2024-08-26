@@ -1,4 +1,4 @@
-# Apollo Presentation API
+# GraphQL IIIF
 
 A GraphQL implementation to support IIIF Presentation API validation
 
@@ -31,13 +31,13 @@ spec tests run against json fixtures in the `cypress/fixtures` directory served 
 # Summary and Metadata
 query {
   manifest(id: "https://iiif.bodleian.ox.ac.uk/iiif/manifest/9cca8fdd-4a61-4429-8ac1-f648764b4d6d.json")
-  {summary, metadata {label {en},value {en}}}
+  {summary {en}, metadata {label {en},value {en}}}
 }
 
 # Canvases
 query {
   manifest(id: "https://iiif.bodleian.ox.ac.uk/iiif/manifest/eb45e6ee-395d-4da1-8337-d8bfdde72ae9.json")
-  {items {type, label, width, height,
+  {items {type, label {en}, width, height,
     items {id, type,
       items {target, body {width, height, service {id}}}}}}}
 
@@ -48,7 +48,7 @@ query {
 
 # Get A Single Canvas
 query { canvas(manifestId: $manifestId, canvasId: $canvasId),
-            {id, label, width, height}
+            {id, label {en}, width, height}
           }
 
 # Get an Annotation Page

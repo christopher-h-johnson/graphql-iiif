@@ -1,0 +1,177 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/manifest/9cca8fdd-4a61-4429-8ac1-f648764b4d6d.json",
+  "@type": "sc:Manifest",
+  "attribution": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "description": "[Handbill of Mr. Becket, [1787] ]",
+  "label": "Bodleian Library Humans 2 (33)",
+  "logo": {
+    "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/f27e28db-0b08-4f16-9bdf-3565f591fb71/full/256,/0/default.jpg",
+    "@type": "dctypes:Image",
+    "format": "image/jpeg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/f27e28db-0b08-4f16-9bdf-3565f591fb71",
+      "profile": "http://iiif.io/api/image/2/level1.json"
+    }
+  },
+  "metadata": [
+    {
+      "label": "Homepage",
+      "value": "<span><a href=\"https://digital.bodleian.ox.ac.uk/objects/9cca8fdd-4a61-4429-8ac1-f648764b4d6d/\">View on Digital Bodleian</a></span>"
+    },
+    {
+      "label": "Title",
+      "value": "[Handbill of Mr. Becket, [1787] ]"
+    },
+    {
+      "label": "Other Titles",
+      "value": "To the nobility, gentry, and the curious for inspecting most extraordinary human beings, of the wild species born. Just arrived from abroad, and to be seen at Mr. Becket's, trunk maker, no. 31, Hay-market, ... three wonderful phnomena, wild-born, of the human species: these are two females and a male, of a very small stature, ..."
+    },
+    {
+      "label": "Shelfmark",
+      "value": "Bodleian Library Humans 2 (33)"
+    },
+    {
+      "label": "Author",
+      "value": "Becket, Mr ([London], England)"
+    },
+    {
+      "label": "Performer",
+      "value": "Incledon, Charles Benjamin, 1763-1826"
+    },
+    {
+      "label": "Funder",
+      "value": "Becket Mr"
+    },
+    {
+      "label": "Language",
+      "value": "English"
+    },
+    {
+      "label": "Date Statement",
+      "value": "[1787]"
+    },
+    {
+      "label": "Description",
+      "value": "Handbill of Mr. Becket, [1787] announcing curiosities and wonders"
+    },
+    {
+      "label": "Extent",
+      "value": "single sheet"
+    },
+    {
+      "label": "Extent",
+      "value": "316 x 194 mm"
+    },
+    {
+      "label": "Collection",
+      "value": "Ephemera"
+    },
+    {
+      "label": "Subject",
+      "value": "Curiosities and wonders"
+    },
+    {
+      "label": "Subject",
+      "value": "Dwarfs"
+    },
+    {
+      "label": "Subject",
+      "value": "Abnormalities, Human"
+    },
+    {
+      "label": "Subject",
+      "value": "Printed ephemera"
+    },
+    {
+      "label": "Subject",
+      "value": "Human curiosities"
+    },
+    {
+      "label": "Subject",
+      "value": "Dwarfs"
+    },
+    {
+      "label": "Subject",
+      "value": "Hills"
+    },
+    {
+      "label": "Subject",
+      "value": "Umbrellas"
+    },
+    {
+      "label": "Other Identifier",
+      "value": "Humans 2 (33)"
+    },
+    {
+      "label": "Other Identifier",
+      "value": "003134"
+    },
+    {
+      "label": "Other Identifier",
+      "value": "t188499"
+    },
+    {
+      "label": "Record Created",
+      "value": "2015-07-10T00:00:00Z"
+    },
+    {
+      "label": "Holding Institution",
+      "value": "Bodleian Libraries, University of Oxford"
+    }
+  ],
+  "navDate": "1787-01-01T00:00:00Z",
+  "rendering": {
+    "@id": "https://digital.bodleian.ox.ac.uk/objects/9cca8fdd-4a61-4429-8ac1-f648764b4d6d/",
+    "format": "text/html",
+    "label": "View on Digital Bodleian"
+  },
+  "sequences": [
+    {
+      "@id": "https://iiif.bodleian.ox.ac.uk/iiif/sequence/9cca8fdd-4a61-4429-8ac1-f648764b4d6d_default.json",
+      "@type": "sc:Sequence",
+      "canvases": [
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/9cca8fdd-4a61-4429-8ac1-f648764b4d6d.json",
+          "@type": "sc:Canvas",
+          "height": 9125,
+          "images": [
+            {
+              "@id": "https://iiif.bodleian.ox.ac.uk/iiif/annotation/9cca8fdd-4a61-4429-8ac1-f648764b4d6d.json",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "on": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/9cca8fdd-4a61-4429-8ac1-f648764b4d6d.json",
+              "resource": {
+                "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/9cca8fdd-4a61-4429-8ac1-f648764b4d6d",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 9125,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/9cca8fdd-4a61-4429-8ac1-f648764b4d6d",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                },
+                "width": 5776
+              }
+            }
+          ],
+          "label": "Whole Page",
+          "width": 5776
+        }
+      ],
+      "label": "Default"
+    }
+  ],
+  "thumbnail": {
+    "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/9cca8fdd-4a61-4429-8ac1-f648764b4d6d/full/256,/0/default.jpg",
+    "@type": "dctypes:Image",
+    "format": "image/jpeg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/9cca8fdd-4a61-4429-8ac1-f648764b4d6d",
+      "profile": "http://iiif.io/api/image/2/level1.json"
+    }
+  },
+  "viewingHint": "individuals"
+}
