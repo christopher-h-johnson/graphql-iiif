@@ -1,11 +1,12 @@
-import {gql} from 'apollo-server'
+import client from '@apollo/client'
+const { gql } = client
 
 export const typeDefs = gql`
     type Manifest {
         id: String!
         type: String!
-        label: String
-        summary: String
+        label: Label
+        summary: Summary
         metadata: [Metadata]!
         homepage: [Homepage]!
         logo: [Logo]!
@@ -50,6 +51,9 @@ export const typeDefs = gql`
     type Value {
         en: [String]!
     }
+    type Summary {
+        en: [String]!
+    }
     type Metadatav2 {
         label: String
         value: String
@@ -63,7 +67,7 @@ export const typeDefs = gql`
     type Logo {
         id: String
         type: String
-        service: Service
+        service: [Service]
     }
     type Service {
         id: String
@@ -73,7 +77,7 @@ export const typeDefs = gql`
     type Thumbnail {
         id: String
         type: String
-        service: Service
+        service: [Service]
     }
     
     type RequiredStatement {
@@ -94,7 +98,7 @@ export const typeDefs = gql`
     type Canvas {
         id: String
         type: String
-        label: String
+        label: Label
         width: Int
         height: Int
         items: [AnnotationPage]!
@@ -133,7 +137,7 @@ export const typeDefs = gql`
         format: String
         width: Int
         height: Int
-        service: Service
+        service: [Service]
     }
     type Structure {
         id: String

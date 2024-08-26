@@ -1,6 +1,5 @@
 import React from 'react'
-import gql from 'graphql-tag'
-import {Query} from 'react-apollo'
+import {gql, Query} from '@apollo/client'
 
 const uuidv4 = require('uuid/v4')
 

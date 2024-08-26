@@ -1,25 +1,25 @@
 {
-  "name": "apollo-presentation-api-server",
-  "version": "0.1.0",
-  "description": "a GraphQL server",
-  "main": "lib/index.js",
-  "keywords": [],
   "author": "Christopher Johnson",
-  "license": "Apache-2.0",
-  "devDependencies": {
-    "@types/graphql": "^14.2.3",
-    "nodemon": "^1.19.1",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.5.3"
-  },
   "dependencies": {
-    "apollo-datasource-rest": "^0.2.2",
-    "apollo-server": "^2.8.1",
-    "graphql": "^14.4.2"
+    "@apollo/client": "^3.11.4",
+    "@apollo/datasource-rest": "^6.3.0",
+    "@apollo/server": "^4.11.0",
+    "graphql": "^16.9.0"
   },
+  "description": "a GraphQL server",
+  "devDependencies": {
+    "@types/node": "22.5.0",
+    "@types/react": "^16.9.56",
+    "typescript": "^5.5.4"
+  },
+  "keywords": [],
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "name": "apollo-presentation-api-server",
   "scripts": {
-    "start": "nodemon --exec ts-node src/index.ts",
-    "stop": "kill $(lsof -t -i:4000)",
-    "build": "tsc"
-  }
+    "compile": "tsc",
+    "start": "npm run compile && node ./dist/index.js"
+  },
+  "type": "module",
+  "version": "0.1.0"
 }

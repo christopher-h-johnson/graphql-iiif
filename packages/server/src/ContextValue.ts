@@ -1,9 +1,7 @@
-import { ManifestAPIv2 } from './ManifestAPIv2.js'
-import { ManifestAPIv3 } from './ManifestAPIv3.js'
+import { ManifestAPIv2 } from './ManifestAPIv2'
+import { ManifestAPIv3 } from './ManifestAPIv3'
 import { IncomingMessage } from 'http'
 import { ApolloServer } from '@apollo/server'
-import { resolvers } from './resolvers.js'
-import { typeDefs } from './v3Schema.js'
 
 export class ContextValue {
   public version: string
@@ -21,8 +19,3 @@ export class ContextValue {
     }
   }
 }
-
-export const server = new ApolloServer<ContextValue>({
-  resolvers,
-  typeDefs
-})
