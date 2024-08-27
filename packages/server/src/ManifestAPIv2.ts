@@ -18,7 +18,7 @@ export class ManifestAPIv2 extends RESTDataSource {
   }
 
   public willSendRequest (path: string, request: AugmentedRequest) {
-    request.headers.Accept = this.version
+    // request.headers.Accept = this.version
   }
 
   public async getManifest (id: string) {

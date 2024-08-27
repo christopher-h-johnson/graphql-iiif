@@ -1,20 +1,19 @@
-import * as React from 'react'
-import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
-import ApolloClient from 'apollo-boost'
-import {ApolloProvider} from 'react-apollo'
-import {ManifestQueryForm} from './components/forms/ManifestQueryForm'
-import {CanvasQueryForm} from './components/forms/CanvasQueryForm'
-import {AnnotationPageQueryForm} from './components/forms/AnnotationPageQueryForm'
-import {AnnotationQueryForm} from './components/forms/AnnotationQueryForm'
+import React, { ReactElement } from 'react'
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
+import { ManifestQueryForm, CanvasQueryForm, AnnotationPageQueryForm, AnnotationQueryForm } from './components/forms'
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000'
+  uri: 'http://localhost:4000',
+  cache: new InMemoryCache()
 })
 
-class App extends React.Component {
-  render () {
-    const t = Boolean(true)
-    return (
+interface IApp {
+}
+
+export const App: React.FC<IApp> = (props): ReactElement => {
+  const t = Boolean(true)
+  return (
       <BrowserRouter>
         <ApolloProvider client={client}>
           <Switch>
@@ -26,7 +25,6 @@ class App extends React.Component {
           </Switch>
         </ApolloProvider>
       </BrowserRouter>)
-  }
 }
 
 const Main = () => (<div>
@@ -35,7 +33,7 @@ const Main = () => (<div>
     <li>
       <Link title='Validate Manifest' to='/manifest'>Validate Manifest</Link>
       <p><span className="fTNNmo">GET</span> /manifest?manifestId={'{'}<span
-        style={{color: 'green'}}>manifestURI</span>{'}'}</p>
+        style={{ color: 'green' }}>manifestURI</span>{'}'}</p>
       <pre><code>
         <a
           href="/manifest?manifestId=https://iiif.bodleian.ox.ac.uk/iiif/manifest/eb45e6ee-395d-4da1-8337-d8bfdde72ae9.json">example</a>
@@ -44,23 +42,23 @@ const Main = () => (<div>
     <li>
       <Link title='Validate Canvas' to='/canvas'>Validate Canvas</Link>
       <p><span className="fTNNmo">GET</span> /canvas?manifestId={'{'}<span
-        style={{color: 'green'}}>manifestURI</span>{'}'}&canvasId={'{'}<span
-        style={{color: 'green'}}>canvasId</span>{'}'}</p>
+        style={{ color: 'green' }}>manifestURI</span>{'}'}&canvasId={'{'}<span
+        style={{ color: 'green' }}>canvasId</span>{'}'}</p>
     </li>
     <li>
       <Link title='Validate Annotation Page' to='/annotationPage'>Validate Annotation Page</Link>
       <p><span className="fTNNmo">GET</span> /annotationPage?manifestId={'{'}<span
-        style={{color: 'green'}}>manifestURI</span>{'}'}&canvasId={'{'}<span
-        style={{color: 'green'}}>canvasId</span>{'}'}&annotationPageId={'{'}<span
-        style={{color: 'green'}}>annotationPageId</span>{'}'}</p>
+        style={{ color: 'green' }}>manifestURI</span>{'}'}&canvasId={'{'}<span
+        style={{ color: 'green' }}>canvasId</span>{'}'}&annotationPageId={'{'}<span
+        style={{ color: 'green' }}>annotationPageId</span>{'}'}</p>
     </li>
     <li>
       <Link title='Validate Annotation' to='/annotation'>Validate Annotation</Link>
       <p><span className="fTNNmo">GET</span> /annotation?manifestId={'{'}<span
-        style={{color: 'green'}}>manifestURI</span>{'}'}&canvasId={'{'}<span
-        style={{color: 'green'}}>canvasId</span>{'}'}&annotationPageId={'{'}<span
-        style={{color: 'green'}}>annotationPageId</span>{'}'}&annotationId={'{'}<span
-        style={{color: 'green'}}>annotationId</span>{'}'}</p>
+        style={{ color: 'green' }}>manifestURI</span>{'}'}&canvasId={'{'}<span
+        style={{ color: 'green' }}>canvasId</span>{'}'}&annotationPageId={'{'}<span
+        style={{ color: 'green' }}>annotationPageId</span>{'}'}&annotationId={'{'}<span
+        style={{ color: 'green' }}>annotationId</span>{'}'}</p>
     </li>
   </ul>
 </div>)

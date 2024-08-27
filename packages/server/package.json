@@ -15,7 +15,7 @@
   "keywords": [],
   "license": "Apache-2.0",
   "main": "dist/index.js",
-  "name": "apollo-presentation-api-server",
+  "name": "graphql-iiif-server",
   "scripts": {
     "compile": "tsc",
     "start": "npm run compile && node ./dist/index.js"

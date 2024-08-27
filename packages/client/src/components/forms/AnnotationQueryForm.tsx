@@ -2,7 +2,7 @@ import * as React from 'react'
 import Annotation from '../Annotation'
 import Checkbox from 'rc-checkbox'
 import SplitterLayout from 'react-splitter-layout'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 const qs = require('query-string')
 
@@ -15,7 +15,7 @@ class AnnotationQueryFormComponent extends React.Component {
       canvasId: '(enter Canvas URI)',
       annotationPageId: '(enter AnnotationPage URI)',
       annotationId: '(enter Annotation URI)',
-      renderQueryInfo: true,
+      renderQueryInfo: true
     }
     this.handleManifestChange = this.handleManifestChange.bind(this)
     this.handleCanvasChange = this.handleCanvasChange.bind(this)
@@ -24,19 +24,19 @@ class AnnotationQueryFormComponent extends React.Component {
   }
 
   handleManifestChange (event) {
-    this.setState({manifestId: event.target.value})
+    this.setState({ manifestId: event.target.value })
   }
 
   handleCanvasChange (event) {
-    this.setState({canvasId: event.target.value})
+    this.setState({ canvasId: event.target.value })
   }
 
   handleAnnotationPageChange (event) {
-    this.setState({annotationPageId: event.target.value})
+    this.setState({ annotationPageId: event.target.value })
   }
 
   handleAnnotationChange (event) {
-    this.setState({annotationId: event.target.value})
+    this.setState({ annotationId: event.target.value })
   }
 
   resolveParams () {
@@ -47,13 +47,13 @@ class AnnotationQueryFormComponent extends React.Component {
         const canvas = params.canvasId
         const annoPage = params.annotationPageId
         const annotation = params.annotationId
-        this.setState({annotationId: annotation, annotationPageId: annoPage, canvasId: canvas, manifestId: manifest})
+        this.setState({ annotationId: annotation, annotationPageId: annoPage, canvasId: canvas, manifestId: manifest })
       }
     }
   }
 
   renderAnnotations () {
-    const {renderQueryInfo, annotation, canvasId, manifestId, annotationPageId, annotationId} = this.state
+    const { renderQueryInfo, annotation, canvasId, manifestId, annotationPageId, annotationId } = this.state
     if (renderQueryInfo) {
       if (annotation) {
         return <Annotation manifestId={manifestId} canvasId={canvasId} annotationPageId={annotationPageId}
@@ -64,7 +64,7 @@ class AnnotationQueryFormComponent extends React.Component {
 
   toggleAnnotation = () => {
     this.setState((state) => ({
-      annotation: !state.annotation,
+      annotation: !state.annotation
     }))
   }
 
@@ -73,7 +73,7 @@ class AnnotationQueryFormComponent extends React.Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    const {annotation, canvasId, manifestId, annotationPageId, annotationId} = this.state
+    const { annotation, canvasId, manifestId, annotationPageId, annotationId } = this.state
     if (annotationId !== prevState.annotationId) {
       this.resolveParams()
     }
@@ -88,15 +88,15 @@ class AnnotationQueryFormComponent extends React.Component {
     }
     if (annotation !== prevState.annotation) {
       if (annotation) {
-        this.setState({renderQueryInfo: true})
+        this.setState({ renderQueryInfo: true })
       } else {
-        this.setState({renderQueryInfo: false})
+        this.setState({ renderQueryInfo: false })
       }
     }
   }
 
   render () {
-    const {canvasId, manifestId, annotationPageId, annotationId} = this.state
+    const { canvasId, manifestId, annotationPageId, annotationId } = this.state
     if (canvasId && manifestId && annotationPageId && annotationId) {
       return (<div>
         <div className='Hj59Ib'>Manifest URI</div>

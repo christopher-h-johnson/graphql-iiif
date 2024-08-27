@@ -1,7 +1,7 @@
 import * as React from 'react'
 import AnnotationPages from '../AnnotationPages'
 import Checkbox from 'rc-checkbox'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import SplitterLayout from 'react-splitter-layout'
 
 const qs = require('query-string')
@@ -21,11 +21,11 @@ class CanvasQueryFormComponent extends React.Component {
   }
 
   handleManifestChange (event) {
-    this.setState({manifestId: event.target.value})
+    this.setState({ manifestId: event.target.value })
   }
 
   handleCanvasChange (event) {
-    this.setState({canvasId: event.target.value})
+    this.setState({ canvasId: event.target.value })
   }
 
   resolveParams () {
@@ -34,13 +34,13 @@ class CanvasQueryFormComponent extends React.Component {
       if (params.manifestId && params.canvasId) {
         const manifest = params.manifestId
         const canvas = params.canvasId
-        this.setState({canvasId: canvas, manifestId: manifest})
+        this.setState({ canvasId: canvas, manifestId: manifest })
       }
     }
   }
 
   renderAnnoPages () {
-    const {renderQueryInfo, annoPages, canvasId, manifestId} = this.state
+    const { renderQueryInfo, annoPages, canvasId, manifestId } = this.state
     if (renderQueryInfo) {
       if (annoPages) {
         return <AnnotationPages manifestId={manifestId} canvasId={canvasId}/>
@@ -50,7 +50,7 @@ class CanvasQueryFormComponent extends React.Component {
 
   toggleAnnoPages = () => {
     this.setState((state) => ({
-      annoPages: !state.annoPages,
+      annoPages: !state.annoPages
     }))
   }
 
@@ -59,7 +59,7 @@ class CanvasQueryFormComponent extends React.Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    const {annoPages, canvasId, manifestId} = this.state
+    const { annoPages, canvasId, manifestId } = this.state
     if (canvasId !== prevState.canvasId) {
       this.resolveParams()
     }
@@ -68,15 +68,15 @@ class CanvasQueryFormComponent extends React.Component {
     }
     if (annoPages !== prevState.annoPages) {
       if (annoPages) {
-        this.setState({renderQueryInfo: true})
+        this.setState({ renderQueryInfo: true })
       } else {
-        this.setState({renderQueryInfo: false})
+        this.setState({ renderQueryInfo: false })
       }
     }
   }
 
   render () {
-    const {canvasId, manifestId} = this.state
+    const { canvasId, manifestId } = this.state
     if (canvasId && manifestId) {
       return (<div>
         <div className='Hj59Ib'>Manifest URI</div>

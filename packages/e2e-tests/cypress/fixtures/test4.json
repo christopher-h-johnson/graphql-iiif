@@ -1,0 +1,313 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://iiif.bodleian.ox.ac.uk/iiif/manifest/dadc6b77-39b3-40b3-a7e8-240421fc3736.json",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Bodleian Library BOD: G.A. Gen. top. 4o 265"
+    ]
+  },
+  "summary": {
+    "en": [
+      "Oxford"
+    ]
+  },
+  "metadata": [
+    {
+      "label": {
+        "en": [
+          "Title"
+        ]
+      },
+      "value": {
+        "en": [
+          "Oxford"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Shelfmark"
+        ]
+      },
+      "value": {
+        "en": [
+          "Bodleian Library BOD: G.A. Gen. top. 4o 265"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Language"
+        ]
+      },
+      "value": {
+        "en": [
+          "English",
+          "Latin"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Date Statement"
+        ]
+      },
+      "value": {
+        "en": [
+          "1879",
+          "1588"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Description"
+        ]
+      },
+      "value": {
+        "en": [
+          "View of the city of Oxford from William Smith, The particular description of England, in a facsimile edition, London 1879"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Extent"
+        ]
+      },
+      "value": {
+        "en": [
+          "35mm slide"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Collection"
+        ]
+      },
+      "value": {
+        "en": [
+          "Maps and Atlases",
+          "Images from 35mm Slides and Filmstrips"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Subject"
+        ]
+      },
+      "value": {
+        "en": [
+          "Oxford (England) Maps, Pictorial"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Other Identifier"
+        ]
+      },
+      "value": {
+        "en": [
+          "G.A. Gen. top. 4o 265, pl. 24",
+          "Filmstrip Roll 221.1, frame 2"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Record Created"
+        ]
+      },
+      "value": {
+        "en": [
+          "2015-07-10T00:00:00Z"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Holding Institution"
+        ]
+      },
+      "value": {
+        "en": [
+          "Bodleian Libraries, University of Oxford"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Access Rights"
+        ]
+      },
+      "value": {
+        "en": [
+          "http://creativecommons.org/licenses/by-nc-sa/3.0/"
+        ]
+      }
+    }
+  ],
+  "homepage": [
+    {
+      "id": "https://digital.bodleian.ox.ac.uk/objects/dadc6b77-39b3-40b3-a7e8-240421fc3736/",
+      "type": "Text",
+      "label": {
+        "en": [
+          "View on Digital Bodleian"
+        ]
+      },
+      "format": "text/html",
+      "language": [
+        "en"
+      ]
+    }
+  ],
+  "navDate": "1588-01-01T00:00:00Z",
+  "logo": [
+    {
+      "id": "https://iiif.bodleian.ox.ac.uk/iiif/image/f27e28db-0b08-4f16-9bdf-3565f591fb71/full/256,/0/default.jpg",
+      "type": "Image",
+      "service": [
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/f27e28db-0b08-4f16-9bdf-3565f591fb71",
+          "@type": "ImageService2",
+          "profile": "http://iiif.io/api/image/2/level1.json"
+        },
+        {
+          "id": "https://iiif.bodleian.ox.ac.uk/iiif/image/f27e28db-0b08-4f16-9bdf-3565f591fb71",
+          "type": "ImageService3",
+          "profile": "level1"
+        }
+      ]
+    }
+  ],
+  "thumbnail": [
+    {
+      "id": "https://iiif.bodleian.ox.ac.uk/iiif/image/dadc6b77-39b3-40b3-a7e8-240421fc3736/full/256,/0/default.jpg",
+      "type": "Image",
+      "service": [
+        {
+          "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/dadc6b77-39b3-40b3-a7e8-240421fc3736",
+          "@type": "ImageService2",
+          "profile": "http://iiif.io/api/image/2/level1.json"
+        },
+        {
+          "id": "https://iiif.bodleian.ox.ac.uk/iiif/image/dadc6b77-39b3-40b3-a7e8-240421fc3736",
+          "type": "ImageService3",
+          "profile": "level1"
+        }
+      ]
+    }
+  ],
+  "partOf": [
+    {
+      "id": "https://iiif.bodleian.ox.ac.uk/iiif/collection/maps",
+      "type": "Collection",
+      "label": {
+        "en": [
+          "Maps and Atlases"
+        ]
+      }
+    },
+    {
+      "id": "https://iiif.bodleian.ox.ac.uk/iiif/collection/35mm",
+      "type": "Collection",
+      "label": {
+        "en": [
+          "Images from 35mm Slides and Filmstrips"
+        ]
+      }
+    },
+    {
+      "id": "https://iiif.bodleian.ox.ac.uk/iiif/collection/bodleian",
+      "type": "Collection",
+      "label": {
+        "en": [
+          "Bodleian Libraries"
+        ]
+      }
+    },
+    {
+      "id": "https://iiif.bodleian.ox.ac.uk/iiif/collection/map-objects",
+      "type": "Collection",
+      "label": {
+        "en": [
+          "Maps"
+        ]
+      }
+    },
+    {
+      "id": "https://iiif.bodleian.ox.ac.uk/iiif/collection/western-origin",
+      "type": "Collection",
+      "label": {
+        "en": [
+          "Western"
+        ]
+      }
+    }
+  ],
+  "behavior": [
+    "individuals"
+  ],
+  "items": [
+    {
+      "id": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/dadc6b77-39b3-40b3-a7e8-240421fc3736.json",
+      "type": "Canvas",
+      "label": {
+        "en": [
+          "Image 1"
+        ]
+      },
+      "width": 1818,
+      "height": 1228,
+      "items": [
+        {
+          "id": "https://iiif.bodleian.ox.ac.uk/iiif/annotationpage/dadc6b77-39b3-40b3-a7e8-240421fc3736.json",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://iiif.bodleian.ox.ac.uk/iiif/annotation/dadc6b77-39b3-40b3-a7e8-240421fc3736_image.json",
+              "type": "Annotation",
+              "target": "https://iiif.bodleian.ox.ac.uk/iiif/canvas/dadc6b77-39b3-40b3-a7e8-240421fc3736.json",
+              "body": {
+                "id": "https://iiif.bodleian.ox.ac.uk/iiif/image/dadc6b77-39b3-40b3-a7e8-240421fc3736/full/max/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "width": 1818,
+                "height": 1228,
+                "service": [
+                  {
+                    "@id": "https://iiif.bodleian.ox.ac.uk/iiif/image/dadc6b77-39b3-40b3-a7e8-240421fc3736",
+                    "@type": "ImageService2",
+                    "profile": "http://iiif.io/api/image/2/level1.json"
+                  },
+                  {
+                    "id": "https://iiif.bodleian.ox.ac.uk/iiif/image/dadc6b77-39b3-40b3-a7e8-240421fc3736",
+                    "type": "ImageService3",
+                    "profile": "level1"
+                  }
+                ]
+              },
+              "motivation": "painting"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -159,6 +159,7 @@ export const typeDefs = gql`
         items: [Canvas]
     }
     type Query {
+        bodies(manifestId: String!): [Body]
         imageServices(manifestId: String!, type: String!, profile: String): [Service]
         annotation(manifestId: String!, canvasId: String!, annotationPageId: String!, annotationId: String!): Annotation
         annotationPage(manifestId: String!, canvasId: String!, annotationPageId: String!): AnnotationPage
