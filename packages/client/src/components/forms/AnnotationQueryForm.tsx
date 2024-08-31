@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Annotation from '../Annotation'
+import { Annotation } from '../Annotation'
 import Checkbox from 'rc-checkbox'
 import SplitterLayout from 'react-splitter-layout'
 import { withRouter } from 'react-router-dom'
@@ -40,6 +40,7 @@ class AnnotationQueryFormComponent extends React.Component {
   }
 
   resolveParams () {
+    // @ts-ignore
     const params = qs.parse(this.props.location.search)
     if (Object.keys(params).length) {
       if (params.manifestId && params.canvasId && params.annotationPageId && params.annotationId) {
@@ -53,6 +54,7 @@ class AnnotationQueryFormComponent extends React.Component {
   }
 
   renderAnnotations () {
+    // @ts-ignore
     const { renderQueryInfo, annotation, canvasId, manifestId, annotationPageId, annotationId } = this.state
     if (renderQueryInfo) {
       if (annotation) {
@@ -64,6 +66,7 @@ class AnnotationQueryFormComponent extends React.Component {
 
   toggleAnnotation = () => {
     this.setState((state) => ({
+      // @ts-ignore
       annotation: !state.annotation
     }))
   }
@@ -73,6 +76,7 @@ class AnnotationQueryFormComponent extends React.Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
+    // @ts-ignore
     const { annotation, canvasId, manifestId, annotationPageId, annotationId } = this.state
     if (annotationId !== prevState.annotationId) {
       this.resolveParams()
@@ -96,18 +100,19 @@ class AnnotationQueryFormComponent extends React.Component {
   }
 
   render () {
+    // @ts-ignore
     const { canvasId, manifestId, annotationPageId, annotationId } = this.state
     if (canvasId && manifestId && annotationPageId && annotationId) {
       return (<div>
         <div className='Hj59Ib'>Manifest URI</div>
-        <textarea cols="100" rows="3" value={manifestId} name={manifestId} onChange={this.handleManifestChange}/>
+        <textarea cols={100} rows={3} value={manifestId} name={manifestId} onChange={this.handleManifestChange}/>
         <div className='Hj59Ib'>Canvas URI</div>
-        <textarea cols="100" rows="3" value={canvasId} name={canvasId} onChange={this.handleCanvasChange}/>
+        <textarea cols={100} rows={3} value={canvasId} name={canvasId} onChange={this.handleCanvasChange}/>
         <div className='Hj59Ib'>Annotation Page URI</div>
-        <textarea cols="100" rows="3" value={annotationPageId} name={annotationPageId}
+        <textarea cols={100} rows={3} value={annotationPageId} name={annotationPageId}
           onChange={this.handleAnnotationPageChange}/>
         <div className='Hj59Ib'>Annotation URI</div>
-        <textarea cols="100" rows="3" value={annotationId} name={annotationId} onChange={this.handleAnnotationChange}/>
+        <textarea cols={100} rows={3} value={annotationId} name={annotationId} onChange={this.handleAnnotationChange}/>
         <SplitterLayout primaryIndex={0} percentage secondaryInitialSize={80}>
           <div>
             <div className='Hj59Ib'>Show Annotation</div>

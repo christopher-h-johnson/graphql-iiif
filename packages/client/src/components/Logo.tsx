@@ -43,19 +43,19 @@ export const Logo: React.FC<any> = (props): ReactElement => {
 
   return data
     ? (<div className="Hj59Ib">
-              <strong>Logo</strong>
-              <ul id='logo'>
-                {data.manifest
-                  ? data.manifest.logo.map(
-                    (logo) =>
-                    <LogoItem
-                      key={uuidv4()}
-                      id={logo.id}
-                      type={logo.type}
-                      service={logo.service}
-                    />)
-                  : null}
-              </ul>
-            </div>)
+            <strong>Logo</strong>
+            <ul id='logo'>
+              {data.manifest
+                ? data.manifest.logo.map(
+                  (logo) =>
+                  <LogoItem
+                    key={uuidv4()}
+                    id={logo.id}
+                    type={logo.type}
+                    service={logo.service}
+                  />)
+                : null}
+            </ul>
+          </div>)
     : null
 }

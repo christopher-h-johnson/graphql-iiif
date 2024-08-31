@@ -1,5 +1,5 @@
 import * as React from 'react'
-import AnnotationPages from '../AnnotationPages'
+import { AnnotationPages } from '../AnnotationPages'
 import Checkbox from 'rc-checkbox'
 import { withRouter } from 'react-router-dom'
 import SplitterLayout from 'react-splitter-layout'
@@ -29,6 +29,7 @@ class CanvasQueryFormComponent extends React.Component {
   }
 
   resolveParams () {
+    // @ts-ignore
     const params = qs.parse(this.props.location.search)
     if (Object.keys(params).length) {
       if (params.manifestId && params.canvasId) {
@@ -40,6 +41,7 @@ class CanvasQueryFormComponent extends React.Component {
   }
 
   renderAnnoPages () {
+    // @ts-ignore
     const { renderQueryInfo, annoPages, canvasId, manifestId } = this.state
     if (renderQueryInfo) {
       if (annoPages) {
@@ -50,6 +52,7 @@ class CanvasQueryFormComponent extends React.Component {
 
   toggleAnnoPages = () => {
     this.setState((state) => ({
+      // @ts-ignore
       annoPages: !state.annoPages
     }))
   }
@@ -59,6 +62,7 @@ class CanvasQueryFormComponent extends React.Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
+    // @ts-ignore
     const { annoPages, canvasId, manifestId } = this.state
     if (canvasId !== prevState.canvasId) {
       this.resolveParams()
@@ -76,13 +80,14 @@ class CanvasQueryFormComponent extends React.Component {
   }
 
   render () {
+    // @ts-ignore
     const { canvasId, manifestId } = this.state
     if (canvasId && manifestId) {
       return (<div>
         <div className='Hj59Ib'>Manifest URI</div>
-        <textarea cols="100" rows="3" value={manifestId} name={manifestId} onChange={this.handleManifestChange}/>
+        <textarea cols={100} rows={3} value={manifestId} name={manifestId} onChange={this.handleManifestChange}/>
         <div className='Hj59Ib'>Canvas URI</div>
-        <textarea cols="100" rows="3" value={canvasId} name={canvasId} onChange={this.handleCanvasChange}/>
+        <textarea cols={100} rows={3} value={canvasId} name={canvasId} onChange={this.handleCanvasChange}/>
         <SplitterLayout primaryIndex={0} percentage secondaryInitialSize={80}>
           <div>
             <div className='Hj59Ib'>Annotation Pages</div>

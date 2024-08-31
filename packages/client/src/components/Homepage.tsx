@@ -34,21 +34,21 @@ export const Homepage: React.FC<any> = (props): ReactElement => {
     variables: { manifestId }
   })
 
-  return data ? (
-              <div className="Hj59Ib">
-                <strong>Homepage</strong>
-                <ul id='homepage'>
-                  {data.manifest
-                    ? data.manifest.homepage.map(
-                      (hp) =>
-                      <HomepageItem
-                        key={uuidv4()}
-                        id={hp.id}
-                        type={hp.type}
-                        label={hp.label}
-                        format={hp.format}/>)
-                    : null}
-                </ul>
-              </div>)
+  return data
+    ? (<div className="Hj59Ib">
+            <strong>Homepage</strong>
+            <ul id='homepage'>
+              {data.manifest
+                ? data.manifest.homepage.map(
+                  (hp) =>
+                  <HomepageItem
+                    key={uuidv4()}
+                    id={hp.id}
+                    type={hp.type}
+                    label={hp.label}
+                    format={hp.format}/>)
+                : null}
+            </ul>
+      </div>)
     : null
 }

@@ -46,19 +46,19 @@ export const Thumbnail: React.FC<any> = (props): ReactElement => {
 
   return data
     ? (<div className="Hj59Ib">
-              <strong>Thumbnail</strong>
-              <ul id='thumbnail'>
-                {data.manifest
-                  ? data.manifest.thumbnail.map(
-                    (t) =>
-                    <ThumbnailItem
-                      key={uuidv4()}
-                      id={t.id}
-                      type={t.type}
-                      service={t.service}
-                    />)
-                  : null}
-              </ul>
-            </div>)
+          <strong>Thumbnail</strong>
+          <ul id='thumbnail'>
+            {data.manifest
+              ? data.manifest.thumbnail.map(
+                (t) =>
+                <ThumbnailItem
+                  key={uuidv4()}
+                  id={t.id}
+                  type={t.type}
+                  service={t.service}
+                />)
+              : null}
+          </ul>
+        </div>)
     : null
 }

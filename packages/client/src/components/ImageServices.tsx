@@ -26,21 +26,22 @@ const GET_IMAGE_SERVICES = gql`
     {id}
   }`
 export const ImageServices: React.FC<any> = (props): ReactElement => {
-  const { manifestId, type } = props
+  const { manifestId } = props
   const { data } = manifestId && useQuery(GET_IMAGE_SERVICES, {
     variables: { manifestId }
   })
-  return data ? (<div>
-              <strong>Image Services</strong>
-              {data.imageServices
-                ? data.imageServices.map(
-                  (s) =>
-                  <ImageServiceItem
-                    manifestId={manifestId}
-                    id={s.id}
-                    key={uuidv4()}
-                  />)
-                : null}
-            </div>)
+  return data
+    ? (<div>
+          <strong>Image Services</strong>
+          {data.imageServices
+            ? data.imageServices.map(
+              (s) =>
+              <ImageServiceItem
+                manifestId={manifestId}
+                id={s.id}
+                key={uuidv4()}
+              />)
+            : null}
+        </div>)
     : null
 }

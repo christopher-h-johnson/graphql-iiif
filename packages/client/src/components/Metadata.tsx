@@ -27,20 +27,19 @@ export const Metadata: React.FC<any> = (props): ReactElement => {
   })
 
   return data
-    ? (
-      <div className="Hj59Ib">
-        <strong>Metadata</strong>
-        <ul id='metadata'>
-          {data.manifest
-            ? data.manifest.metadata.map(
-              (metadata) =>
-              <MetadataItem
-                key={uuidv4()}
-                language={defaultLang}
-                label={metadata.label}
-                value={metadata.value}/>)
-            : null}
-        </ul>
-      </div>)
+    ? (<div className="Hj59Ib">
+            <strong>Metadata</strong>
+            <ul id='metadata'>
+              {data.manifest
+                ? data.manifest.metadata.map(
+                  (metadata) =>
+                  <MetadataItem
+                    key={uuidv4()}
+                    language={defaultLang}
+                    label={metadata.label}
+                    value={metadata.value}/>)
+                : null}
+            </ul>
+          </div>)
     : null
 }

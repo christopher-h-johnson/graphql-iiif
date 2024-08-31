@@ -72,22 +72,22 @@ export const Annotations: React.FC<any> = (props): ReactElement => {
 
   return data
     ? (<div>
-              <strong>Annotations</strong>
-              {data.annotationPage
-                ? data.annotationPage.items.map(
-                  (c) =>
-                  <AnnotationsItem
-                    manifestId={manifestId}
-                    canvasId={canvasId}
-                    annotationPageId={annotationPageId}
-                    id={c.id} type={c.type}
-                    motivation={c.motivation}
-                    target={c.target}
-                    body={c.body}
-                    key={uuidv4()}
-                  />)
-                : 'no annotations returned from endpoint'}
-            </div>)
+          <strong>Annotations</strong>
+          {data.annotationPage
+            ? data.annotationPage.items.map(
+              (c) =>
+              <AnnotationsItem
+                manifestId={manifestId}
+                canvasId={canvasId}
+                annotationPageId={annotationPageId}
+                id={c.id} type={c.type}
+                motivation={c.motivation}
+                target={c.target}
+                body={c.body}
+                key={uuidv4()}
+              />)
+            : 'no annotations returned from endpoint'}
+        </div>)
     : null
 }
 

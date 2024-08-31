@@ -71,20 +71,19 @@ export const Annotation: React.FC<any> = (props): ReactElement => {
   })
 
   return data
-    ? (
-            <div>
-                <strong>Annotation</strong>
-                {data.annotation
-                  ? <AnnotationItem
-                        manifestId={manifestId}
-                        id={data.annotation.id}
-                        type={data.annotation.type}
-                        motivation={data.annotation.motivation}
-                        target={data.annotation.target}
-                        body={data.annotation.body}
-                        key={uuidv4()}/>
-                  : null}
-            </div>
+    ? (<div>
+        <strong>Annotation</strong>
+        {data.annotation
+          ? <AnnotationItem
+                manifestId={manifestId}
+                id={data.annotation.id}
+                type={data.annotation.type}
+                motivation={data.annotation.motivation}
+                target={data.annotation.target}
+                body={data.annotation.body}
+                key={uuidv4()}/>
+          : null}
+        </div>
       )
     : null
 }

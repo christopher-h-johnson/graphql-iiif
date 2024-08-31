@@ -15,13 +15,12 @@ export const Label: React.FC<any> = (props): ReactElement => {
   })
   return data
     ? (<div className="Hj59Ib">
-              <strong>Label</strong>
-              <ul id='label'>
-                <li className='list-group-item'>
-                  {data.manifest ? data.manifest.label[defaultLang][0] : null}
-                </li>
-              </ul>
-            </div>)
+          <strong>Label</strong>
+          <ul id='label'>
+            <li className='list-group-item'>
+              {data.manifest ? data.manifest.label[defaultLang][0] : null}
+            </li>
+          </ul>
+        </div>)
     : null
 }
-

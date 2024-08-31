@@ -35,6 +35,7 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   resolveParams () {
+    // @ts-ignore
     const params = qs.parse(this.props.location.search)
     if (Object.keys(params).length) {
       if (params.manifestId) {
@@ -53,6 +54,7 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderLabel () {
+    // @ts-ignore
     const { renderQueryInfo, label, manifestId } = this.state
     if (renderQueryInfo) {
       if (label) {
@@ -62,6 +64,7 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderSummary () {
+    // @ts-ignore
     const { renderQueryInfo, manifestId, summary } = this.state
     if (renderQueryInfo) {
       if (summary) {
@@ -71,6 +74,7 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderMetadata () {
+    // @ts-ignore
     const { renderQueryInfo, manifestId, metadata } = this.state
     if (renderQueryInfo) {
       if (metadata) {
@@ -80,6 +84,7 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderHomepage () {
+    // @ts-ignore
     const { renderQueryInfo, homepage, manifestId } = this.state
     if (renderQueryInfo) {
       if (homepage) {
@@ -89,6 +94,7 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderLogo () {
+    // @ts-ignore
     const { renderQueryInfo, logo, manifestId } = this.state
     if (renderQueryInfo) {
       if (logo) {
@@ -98,6 +104,7 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderThumbnail () {
+    // @ts-ignore
     const { renderQueryInfo, thumbnail, manifestId } = this.state
     if (renderQueryInfo) {
       if (thumbnail) {
@@ -107,6 +114,7 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderCanvases () {
+    // @ts-ignore
     const { renderQueryInfo, canvases, manifestId } = this.state
     if (renderQueryInfo) {
       if (canvases) {
@@ -116,6 +124,7 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderImageServices () {
+    // @ts-ignore
     const { renderQueryInfo, imageServices, manifestId } = this.state
     if (renderQueryInfo) {
       if (imageServices) {
@@ -126,48 +135,56 @@ class ManifestQueryFormComponent extends React.Component {
 
   toggleLabel = () => {
     this.setState((state) => ({
+      // @ts-ignore
       label: !state.label
     }))
   }
 
   toggleSummary = () => {
     this.setState((state) => ({
+      // @ts-ignore
       summary: !state.summary
     }))
   }
 
   toggleMetadata = () => {
     this.setState((state) => ({
+      // @ts-ignore
       metadata: !state.metadata
     }))
   }
 
   toggleHomepage = () => {
     this.setState((state) => ({
+      // @ts-ignore
       homepage: !state.homepage
     }))
   }
 
   toggleLogo = () => {
     this.setState((state) => ({
+      // @ts-ignore
       logo: !state.logo
     }))
   }
 
   toggleThumbnail = () => {
     this.setState((state) => ({
+      // @ts-ignore
       thumbnail: !state.thumbnail
     }))
   }
 
   toggleCanvases = () => {
     this.setState((state) => ({
+      // @ts-ignore
       canvases: !state.canvases
     }))
   }
 
   toggleImageServices = () => {
     this.setState((state) => ({
+      // @ts-ignore
       imageServices: !state.imageServices
     }))
   }
@@ -177,6 +194,7 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
+    // @ts-ignore
     const { manifestId, label, summary, metadata, homepage, logo, thumbnail, canvases, imageServices } = this.state
     if (manifestId !== prevState.manifestId) {
       this.resolveParams()
@@ -191,13 +209,14 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   render () {
+    // @ts-ignore
     const { manifestId } = this.state
     return (
       <div>
         <div className='Hj59Ib'>Manifest URI</div>
         <textarea
           id="manifestURI"
-          cols="100" rows="3"
+          cols={100} rows={3}
           name={manifestId}
           onFocus={this.handleFocus}
           onChange={this.handleChange}

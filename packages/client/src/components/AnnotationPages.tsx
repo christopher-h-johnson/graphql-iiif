@@ -33,18 +33,18 @@ export const AnnotationPages: React.FC<any> = (props): ReactElement => {
 
   return data
     ? (<div>
-            <strong>Annotation Pages</strong>
-            {data.canvas
-              ? data.canvas.items.map(
-                (c) =>
-                        <AnnotationPageItem
-                            manifestId={manifestId}
-                            canvasId={canvasId}
-                            id={c.id}
-                            type={c.type}
-                            key={uuidv4()}
-                        />)
-              : null}
+        <strong>Annotation Pages</strong>
+        {data.canvas
+          ? data.canvas.items.map(
+            (c) =>
+                    <AnnotationPageItem
+                        manifestId={manifestId}
+                        canvasId={canvasId}
+                        id={c.id}
+                        type={c.type}
+                        key={uuidv4()}
+                    />)
+          : null}
         </div>)
     : null
 }
