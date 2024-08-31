@@ -1,7 +1,7 @@
 import * as React from 'react'
-import AnnotationPages from '../AnnotationPages'
+import { AnnotationPages } from '../AnnotationPages'
 import Checkbox from 'rc-checkbox'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import SplitterLayout from 'react-splitter-layout'
 
 const qs = require('query-string')
@@ -21,26 +21,28 @@ class CanvasQueryFormComponent extends React.Component {
   }
 
   handleManifestChange (event) {
-    this.setState({manifestId: event.target.value})
+    this.setState({ manifestId: event.target.value })
   }
 
   handleCanvasChange (event) {
-    this.setState({canvasId: event.target.value})
+    this.setState({ canvasId: event.target.value })
   }
 
   resolveParams () {
+    // @ts-ignore
     const params = qs.parse(this.props.location.search)
     if (Object.keys(params).length) {
       if (params.manifestId && params.canvasId) {
         const manifest = params.manifestId
         const canvas = params.canvasId
-        this.setState({canvasId: canvas, manifestId: manifest})
+        this.setState({ canvasId: canvas, manifestId: manifest })
       }
     }
   }
 
   renderAnnoPages () {
-    const {renderQueryInfo, annoPages, canvasId, manifestId} = this.state
+    // @ts-ignore
+    const { renderQueryInfo, annoPages, canvasId, manifestId } = this.state
     if (renderQueryInfo) {
       if (annoPages) {
         return <AnnotationPages manifestId={manifestId} canvasId={canvasId}/>
@@ -50,7 +52,8 @@ class CanvasQueryFormComponent extends React.Component {
 
   toggleAnnoPages = () => {
     this.setState((state) => ({
-      annoPages: !state.annoPages,
+      // @ts-ignore
+      annoPages: !state.annoPages
     }))
   }
 
@@ -59,7 +62,8 @@ class CanvasQueryFormComponent extends React.Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    const {annoPages, canvasId, manifestId} = this.state
+    // @ts-ignore
+    const { annoPages, canvasId, manifestId } = this.state
     if (canvasId !== prevState.canvasId) {
       this.resolveParams()
     }
@@ -68,21 +72,22 @@ class CanvasQueryFormComponent extends React.Component {
     }
     if (annoPages !== prevState.annoPages) {
       if (annoPages) {
-        this.setState({renderQueryInfo: true})
+        this.setState({ renderQueryInfo: true })
       } else {
-        this.setState({renderQueryInfo: false})
+        this.setState({ renderQueryInfo: false })
       }
     }
   }
 
   render () {
-    const {canvasId, manifestId} = this.state
+    // @ts-ignore
+    const { canvasId, manifestId } = this.state
     if (canvasId && manifestId) {
       return (<div>
         <div className='Hj59Ib'>Manifest URI</div>
-        <textarea cols="100" rows="3" value={manifestId} name={manifestId} onChange={this.handleManifestChange}/>
+        <textarea cols={100} rows={3} value={manifestId} name={manifestId} onChange={this.handleManifestChange}/>
         <div className='Hj59Ib'>Canvas URI</div>
-        <textarea cols="100" rows="3" value={canvasId} name={canvasId} onChange={this.handleCanvasChange}/>
+        <textarea cols={100} rows={3} value={canvasId} name={canvasId} onChange={this.handleCanvasChange}/>
         <SplitterLayout primaryIndex={0} percentage secondaryInitialSize={80}>
           <div>
             <div className='Hj59Ib'>Annotation Pages</div>

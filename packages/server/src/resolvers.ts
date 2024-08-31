@@ -16,20 +16,33 @@ export const resolvers = {
         return res.items.filter((item: any) => item.id === args.annotationPageId)[0]
       })
     },
+    bodies (parent, args, contextValue, info) {
+      return contextValue.dataSources.manifestAPIv3.getManifest(args.manifestId).then((res: any) => {
+        return res.items && res.items.reduce((accumulator: any, currentValue: any) => {
+          return [...accumulator, ...currentValue.items]
+        }, []).reduce((accumulator: any, currentValue: any) => {
+          return [...accumulator, ...currentValue.items]
+        }, []).map((a: any) => a.body)
+      })
+    },
     canvas (parent, args, contextValue, info) {
       return contextValue.dataSources.manifestAPIv3.getManifest(args.manifestId).then((res: any) => {
         return res.items.filter((item: any) => item.id === args.canvasId)[0]
       })
     },
+
     imageServices (parent, args, contextValue, info) {
       return contextValue.dataSources.manifestAPIv3.getManifest(args.manifestId).then((res: any) => {
         return res.items && res.items.reduce((accumulator: any, currentValue: any) => {
           return [...accumulator, ...currentValue.items]
         }, []).reduce((accumulator: any, currentValue: any) => {
           return [...accumulator, ...currentValue.items]
-        }, []).map((a: any) => a.body.service).filter((s: any) => s.type === args.type)
+        }, []).map((a: any) => a.body).reduce((accumulator: any, currentValue: any) => {
+          return [...accumulator, ...currentValue.service]
+        }, []).filter((s: any) => s.type === args.type)
       })
     },
+
     manifest (parent, args, contextValue, info) {
       return contextValue.dataSources.manifestAPIv3.getManifest(args.id)
     },

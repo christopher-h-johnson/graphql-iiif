@@ -1,7 +1,7 @@
 {
   "name": "e2e-tests",
   "version": "0.1.0",
-  "description": "end-to-end tests for apollo-presentation-api",
+  "description": "end-to-end tests for graphql-iiif",
   "main": "index.js",
   "scripts": {
     "cypress:open": "npm run pretest & cypress open && npm run posttest",

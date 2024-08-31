@@ -1,5 +1,5 @@
 {
-  "name": "apollo-presentation-api-client",
+  "name": "graphql-iiif-client",
   "version": "0.1.0",
   "description": "",
   "private": true,
@@ -18,14 +18,10 @@
     "uuid": "3.3.2"
   },
   "scripts": {
-    "lint": "node_modules/.bin/eslint . --ext .js,.jsx",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": [
     ">0.2%",

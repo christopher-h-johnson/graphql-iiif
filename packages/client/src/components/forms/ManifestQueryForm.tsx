@@ -1,15 +1,15 @@
 import * as React from 'react'
-import Label from '../Label'
-import Summary from '../Summary'
-import Metadata from '../Metadata'
-import Homepage from '../Homepage'
-import Logo from '../Logo'
-import Thumbnail from '../Thumbnail'
-import Canvases from '../Canvases'
-import ImageServices from '../ImageServices'
+import { Label } from '../Label'
+import { Summary } from '../Summary'
+import { Metadata } from '../Metadata'
+import { Homepage } from '../Homepage'
+import { Logo } from '../Logo'
+import { Thumbnail } from '../Thumbnail'
+import { Canvases } from '../Canvases'
+import { ImageServices } from '../ImageServices'
 import Checkbox from 'rc-checkbox'
 import SplitterLayout from 'react-splitter-layout'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 const qs = require('query-string')
 
@@ -35,25 +35,27 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   resolveParams () {
+    // @ts-ignore
     const params = qs.parse(this.props.location.search)
     if (Object.keys(params).length) {
       if (params.manifestId) {
         const manifest = params.manifestId
-        this.setState({manifestId: manifest})
+        this.setState({ manifestId: manifest })
       }
     }
   }
 
   handleChange (event) {
-    this.setState({manifestId: event.target.value})
+    this.setState({ manifestId: event.target.value })
   }
 
   handleFocus (event) {
-    this.setState({manifestId: ''})
+    this.setState({ manifestId: '' })
   }
 
   renderLabel () {
-    const {renderQueryInfo, label, manifestId} = this.state
+    // @ts-ignore
+    const { renderQueryInfo, label, manifestId } = this.state
     if (renderQueryInfo) {
       if (label) {
         return <Label manifestId={manifestId}/>
@@ -62,7 +64,8 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderSummary () {
-    const {renderQueryInfo, manifestId, summary} = this.state
+    // @ts-ignore
+    const { renderQueryInfo, manifestId, summary } = this.state
     if (renderQueryInfo) {
       if (summary) {
         return <Summary manifestId={manifestId}/>
@@ -71,7 +74,8 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderMetadata () {
-    const {renderQueryInfo, manifestId, metadata} = this.state
+    // @ts-ignore
+    const { renderQueryInfo, manifestId, metadata } = this.state
     if (renderQueryInfo) {
       if (metadata) {
         return <Metadata manifestId={manifestId}/>
@@ -80,7 +84,8 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderHomepage () {
-    const {renderQueryInfo, homepage, manifestId} = this.state
+    // @ts-ignore
+    const { renderQueryInfo, homepage, manifestId } = this.state
     if (renderQueryInfo) {
       if (homepage) {
         return <Homepage manifestId={manifestId}/>
@@ -89,7 +94,8 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderLogo () {
-    const {renderQueryInfo, logo, manifestId} = this.state
+    // @ts-ignore
+    const { renderQueryInfo, logo, manifestId } = this.state
     if (renderQueryInfo) {
       if (logo) {
         return <Logo manifestId={manifestId}/>
@@ -98,7 +104,8 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderThumbnail () {
-    const {renderQueryInfo, thumbnail, manifestId} = this.state
+    // @ts-ignore
+    const { renderQueryInfo, thumbnail, manifestId } = this.state
     if (renderQueryInfo) {
       if (thumbnail) {
         return <Thumbnail manifestId={manifestId}/>
@@ -107,7 +114,8 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderCanvases () {
-    const {renderQueryInfo, canvases, manifestId} = this.state
+    // @ts-ignore
+    const { renderQueryInfo, canvases, manifestId } = this.state
     if (renderQueryInfo) {
       if (canvases) {
         return <Canvases manifestId={manifestId}/>
@@ -116,7 +124,8 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   renderImageServices () {
-    const {renderQueryInfo, imageServices, manifestId} = this.state
+    // @ts-ignore
+    const { renderQueryInfo, imageServices, manifestId } = this.state
     if (renderQueryInfo) {
       if (imageServices) {
         return <ImageServices manifestId={manifestId} type='ImageService2'/>
@@ -126,49 +135,57 @@ class ManifestQueryFormComponent extends React.Component {
 
   toggleLabel = () => {
     this.setState((state) => ({
-      label: !state.label,
+      // @ts-ignore
+      label: !state.label
     }))
   }
 
   toggleSummary = () => {
     this.setState((state) => ({
-      summary: !state.summary,
+      // @ts-ignore
+      summary: !state.summary
     }))
   }
 
   toggleMetadata = () => {
     this.setState((state) => ({
-      metadata: !state.metadata,
+      // @ts-ignore
+      metadata: !state.metadata
     }))
   }
 
   toggleHomepage = () => {
     this.setState((state) => ({
-      homepage: !state.homepage,
+      // @ts-ignore
+      homepage: !state.homepage
     }))
   }
 
   toggleLogo = () => {
     this.setState((state) => ({
-      logo: !state.logo,
+      // @ts-ignore
+      logo: !state.logo
     }))
   }
 
   toggleThumbnail = () => {
     this.setState((state) => ({
-      thumbnail: !state.thumbnail,
+      // @ts-ignore
+      thumbnail: !state.thumbnail
     }))
   }
 
   toggleCanvases = () => {
     this.setState((state) => ({
-      canvases: !state.canvases,
+      // @ts-ignore
+      canvases: !state.canvases
     }))
   }
 
   toggleImageServices = () => {
     this.setState((state) => ({
-      imageServices: !state.imageServices,
+      // @ts-ignore
+      imageServices: !state.imageServices
     }))
   }
 
@@ -177,27 +194,29 @@ class ManifestQueryFormComponent extends React.Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    const {manifestId, label, summary, metadata, homepage, logo, thumbnail, canvases, imageServices} = this.state
+    // @ts-ignore
+    const { manifestId, label, summary, metadata, homepage, logo, thumbnail, canvases, imageServices } = this.state
     if (manifestId !== prevState.manifestId) {
       this.resolveParams()
     }
     if (summary !== prevState.summary || label !== prevState.label || metadata !== prevState.metadata || homepage !== prevState.homepage || logo !== prevState.logo || thumbnail !== prevState.thumbnail || canvases !== prevState.canvases || imageServices !== prevState.imageServices) {
       if (summary || label || metadata || homepage || logo || thumbnail || canvases || imageServices) {
-        this.setState({renderQueryInfo: true})
+        this.setState({ renderQueryInfo: true })
       } else {
-        this.setState({renderQueryInfo: false})
+        this.setState({ renderQueryInfo: false })
       }
     }
   }
 
   render () {
-    const {manifestId} = this.state
+    // @ts-ignore
+    const { manifestId } = this.state
     return (
       <div>
         <div className='Hj59Ib'>Manifest URI</div>
         <textarea
           id="manifestURI"
-          cols="100" rows="3"
+          cols={100} rows={3}
           name={manifestId}
           onFocus={this.handleFocus}
           onChange={this.handleChange}

@@ -18,10 +18,13 @@ export class ManifestAPIv3 extends RESTDataSource {
   }
 
   public override willSendRequest (path: string, request: AugmentedRequest) {
-    request.headers.Accept = this.version
+    request.headers.Accept = 'application/json;profile=http://iiif.io/api/presentation/3/context.json'
   }
 
   public async getManifest (id: string) {
-    return this.get(`${id}`)
+    const data = await this.get(`${id}`)
+    const dataStr = JSON.stringify(data)
+    const replaced = dataStr.replace(/@/gi, '')
+    return JSON.parse(replaced)
   }
 }
