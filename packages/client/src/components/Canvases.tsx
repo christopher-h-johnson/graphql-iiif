@@ -27,7 +27,7 @@ export const CanvasItem = (props) => {
 const GET_CANVASES = gql`
   query Canvases($manifestId: String!) {
     manifest(id: $manifestId)
-    {items {id, type, label, width, height}}
+    {items {id, type, label {en}, width, height}}
   }`
 
 export const Canvases: React.FC<any> = (props): ReactElement => {
@@ -45,7 +45,7 @@ export const Canvases: React.FC<any> = (props): ReactElement => {
                     <CanvasItem
                         manifestId={manifestId}
                         id={c.id} type={c.type}
-                        label={c.label}
+                        label={c.label.en[0]}
                         width={c.width}
                         height={c.height}
                         key={uuidv4()}

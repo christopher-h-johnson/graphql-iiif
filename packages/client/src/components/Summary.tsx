@@ -4,7 +4,7 @@ import { gql, useQuery } from '@apollo/client'
 const GET_SUMMARY = gql`
     query Summary($manifestId: String!) {
         manifest(id: $manifestId)
-        {summary}
+        {summary {en}}
     }`
 
 export const Summary: React.FC<any> = (props): ReactElement => {
@@ -17,7 +17,7 @@ export const Summary: React.FC<any> = (props): ReactElement => {
       <strong>Summary</strong>
       <ul id='summary'>
         <li className='list-group-item'>
-          {data.manifest ? data.manifest.summary : null}
+          {data.manifest ? data.manifest.summary.en[0] : null}
         </li>
       </ul>
     </div>)
